@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .fact-container {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-10px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="fact-container">
+        <p id="fact">Click the button to see a random crocodile fact!</p>
+    </div>
+    <button id="factButton">Show Random Fact</button>
+
+    <script>
+        const facts = [
+            {
+                "fact": "Crocodiles are large aquatic reptiles that live throughout the tropics in Africa, Asia, the Americas, and Australia."
+            },
+            {
+                "fact": "They are members of the order Crocodylia, which also includes alligators, caimans, and gharials."
+            },
+            {
+                "fact": "Crocodiles have powerful jaws with many conical teeth and short legs with clawed webbed toes."
+            },
+            {
+                "fact": "They are excellent swimmers and can hold their breath underwater for up to an hour."
+            },
+            {
+                "fact": "Crocodiles are carnivorous and have a diet that includes fish, birds, mammals, and occasionally smaller crocodiles."
+            },
+            {
+                "fact": "They have a highly developed sense of hearing and can detect vibrations in the water."
+            },
+            {
+                "fact": "Crocodiles can live for more than 70 years in the wild."
+            },
+            {
+                "fact": "They are known for their ambush hunting technique, where they wait for prey to come close before launching a surprise attack."
+            },
+            {
+                "fact": "Crocodiles have a unique heart structure with four chambers, similar to birds and mammals, which allows efficient oxygenation of blood."
+            },
+            {
+                "fact": "The largest species, the saltwater crocodile, can grow up to 23 feet long and weigh over 2,200 pounds."
+            }
+        ];
+
+        document.getElementById('factButton').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').textContent = facts[randomIndex].fact;
+        });
+    </script>
+</body>
+</html>
